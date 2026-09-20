@@ -99,7 +99,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Hình ảnh 1) -->
+    <!-- HERO SECTION -->
     <section class="hero-gradient mt-16 lg:mt-20 py-16 lg:py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12">
@@ -143,7 +143,7 @@
         </div>
     </section>
 
-    <!-- TOKEN FASTCA LÀ GÌ? (Hình ảnh 2) -->
+    <!-- TOKEN FASTCA LÀ GÌ? -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -211,7 +211,7 @@
         </div>
     </section>
 
-    <!-- BỘ SẢN PHẨM (Hình ảnh 3) -->
+    <!-- BỘ SẢN PHẨM -->
     <section id="package" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
@@ -298,7 +298,7 @@
         </div>
     </section>
 
-    <!-- CTA & FORM & FOOTER (Cấu trúc tương tự) -->
+    <!-- CTA -->
     <section class="py-16 hero-gradient text-white text-center">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">SẴN SÀNG SỬ DỤNG TOKEN FASTCA?</h2>
@@ -315,36 +315,58 @@
         </div>
     </section>
 
+    <!-- FORM ĐẶT HÀNG & LIÊN HỆ -->
     <section id="order" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
                 <div class="lg:w-2/3 bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-100">
                     <h2 class="text-3xl font-bold text-fastca-navy mb-6 border-b border-slate-200 pb-4">ĐĂNG KÝ MUA TOKEN FASTCA</h2>
+                    
                     <form id="orderForm" onsubmit="submitForm(event)">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div><label class="block text-sm font-semibold text-slate-700 mb-2">Họ và tên *</label><input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></div>
-                            <div><label class="block text-sm font-semibold text-slate-700 mb-2">Số điện thoại *</label><input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Họ và tên *</label>
+                                <input type="text" name="Ho_Ten" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Số điện thoại *</label>
+                                <input type="tel" name="So_Dien_Thoai" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue">
+                            </div>
                         </div>
-                        <div class="mb-6"><label class="block text-sm font-semibold text-slate-700 mb-2">Email</label><input type="email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></div>
-                        <div class="mb-6"><label class="block text-sm font-semibold text-slate-700 mb-2">Địa chỉ nhận hàng</label><input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                            <input type="email" name="Email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Địa chỉ nhận hàng</label>
+                            <input type="text" name="Dia_Chi" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue">
+                        </div>
                         
                         <div class="mb-6">
                             <label class="block text-sm font-semibold text-slate-700 mb-3">Chọn gói sản phẩm:</label>
                             <div class="space-y-3">
                                 <label class="flex items-center p-4 border border-slate-200 rounded-xl cursor-pointer hover:bg-white transition bg-white">
-                                    <input type="radio" name="package" id="radio-1-year" value="Gói 1 năm" class="w-5 h-5 text-fastca-blue focus:ring-fastca-blue">
+                                    <input type="radio" name="Goi_San_Pham" id="radio-1-year" value="Gói 1 năm" class="w-5 h-5 text-fastca-blue focus:ring-fastca-blue">
                                     <span class="ml-3 font-medium text-slate-700">Gói 1 năm - <span class="config-price-1 text-fastca-blue font-bold"></span></span>
                                 </label>
                                 <label class="flex items-center p-4 border border-slate-200 rounded-xl cursor-pointer hover:bg-white transition bg-blue-50 border-blue-200">
-                                    <input type="radio" name="package" id="radio-3-year" value="Gói 3 năm" checked class="w-5 h-5 text-fastca-blue focus:ring-fastca-blue">
+                                    <input type="radio" name="Goi_San_Pham" id="radio-3-year" value="Gói 3 năm" checked class="w-5 h-5 text-fastca-blue focus:ring-fastca-blue">
                                     <span class="ml-3 font-medium text-slate-700">Gói 3 năm - <span class="config-price-3 text-fastca-blue font-bold"></span></span>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="mb-6"><label class="block text-sm font-semibold text-slate-700 mb-2">Ghi chú</label><textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></textarea></div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Ghi chú</label>
+                            <textarea name="Ghi_Chu" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fastca-blue"></textarea>
+                        </div>
+
+                        <!-- Cấu hình nâng cao cho FormSubmit -->
+                        <input type="hidden" name="_subject" value="ĐƠN ĐẶT HÀNG TOKEN FASTCA MỚI">
+                        <input type="hidden" name="_captcha" value="false">
 
                         <button type="submit" class="w-full bg-fastca-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-lg">ĐẶT HÀNG NGAY</button>
+                        
                         <div id="successMsg" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-xl text-center font-medium border border-green-200">
                             Cảm ơn bạn! Yêu cầu đã được ghi nhận. <br> FASTCA sẽ liên hệ với bạn để xác nhận đơn hàng.
                         </div>
@@ -371,6 +393,7 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="py-20 bg-slate-50">
         <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
             <div class="text-center mb-12">
@@ -381,6 +404,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-fastca-navy text-slate-300 py-12 border-t-4 border-fastca-gold">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8 mb-8 border-b border-slate-700 pb-8">
@@ -441,7 +465,6 @@
             PHONE_LINK: "0787778066",
             ZALO_LINK: "https://zalo.me/0787778066",
             LOGO_URL: "https://ngotran.vn/wp-content/uploads/2024/12/FastCA-.png", 
-            // 3 VỊ TRÍ HÌNH ẢNH MỚI
             PRODUCT_IMAGE_1_URL: "https://fastca.vn/wp-content/uploads/2023/05/Group-8902.png", 
             PRODUCT_IMAGE_2_URL: "https://fastca.vn/wp-content/uploads/2023/05/Visual.png", 
             PRODUCT_IMAGE_3_URL: "https://tax-vn.github.io/fastca/fastca.jpg" 
@@ -460,7 +483,6 @@
 
             document.querySelectorAll('.config-logo').forEach(el => el.src = CONFIG.LOGO_URL);
             
-            // MAP TỪNG ẢNH VÀO TỪNG VỊ TRÍ
             document.querySelectorAll('.config-product-image-1').forEach(el => el.src = CONFIG.PRODUCT_IMAGE_1_URL);
             document.querySelectorAll('.config-product-image-2').forEach(el => el.src = CONFIG.PRODUCT_IMAGE_2_URL);
             document.querySelectorAll('.config-product-image-3').forEach(el => el.src = CONFIG.PRODUCT_IMAGE_3_URL);
@@ -479,17 +501,38 @@
             else document.getElementById('radio-3-year').checked = true;
         }
 
+        // --- HÀM GỬI FORM ĐÃ ĐƯỢC CẬP NHẬT ---
         function submitForm(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            
+            // Hiển thị trạng thái đang tải
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> ĐANG GỬI...';
             btn.disabled = true;
-            setTimeout(() => {
+
+            // Lấy dữ liệu từ form
+            const formData = new FormData(form);
+
+            // BẠN HÃY THAY email_cua_ban@gmail.com THÀNH EMAIL THỰC TẾ CỦA BẠN VÀO LINK BÊN DƯỚI
+            fetch("https://formsubmit.co/ajax/email_cua_ban@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Xử lý khi gửi thành công
                 btn.innerHTML = 'ĐẶT HÀNG NGAY';
                 btn.disabled = false;
-                document.getElementById('successMsg').classList.remove('hidden');
-                e.target.reset();
-            }, 1000);
+                document.getElementById('successMsg').classList.remove('hidden'); // Hiện thông báo thành công
+                form.reset(); // Xóa trắng form sau khi gửi
+            })
+            .catch(error => {
+                // Xử lý khi gửi thất bại
+                alert("Có lỗi kết nối, vui lòng thử lại sau!");
+                btn.innerHTML = 'ĐẶT HÀNG NGAY';
+                btn.disabled = false;
+            });
         }
 
         const faqData = [

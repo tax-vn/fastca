@@ -501,7 +501,7 @@
             else document.getElementById('radio-3-year').checked = true;
         }
 
-        // --- HÀM GỬI FORM ĐÃ ĐƯỢC CẬP NHẬT ---
+        // --- HÀM GỬI FORM AJAX (CÁCH 2) ĐÃ FIX LỖI CORS ---
         function submitForm(e) {
             e.preventDefault();
             const form = e.target;
@@ -514,22 +514,32 @@
             // Lấy dữ liệu từ form
             const formData = new FormData(form);
 
-            // BẠN HÃY THAY email_cua_ban@gmail.com THÀNH EMAIL THỰC TẾ CỦA BẠN VÀO LINK BÊN DƯỚI
+            // Gửi dữ liệu qua FormSubmit bằng AJAX
             fetch("https://formsubmit.co/ajax/ngotran.tuvan@gmail.com", {
                 method: "POST",
+                headers: {
+                    // Dòng này bắt buộc phải có để FormSubmit trả về JSON và không bị chặn bởi CORS
+                    'Accept': 'application/json' 
+                },
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
-                // Xử lý khi gửi thành công
-                btn.innerHTML = 'ĐẶT HÀNG NGAY';
-                btn.disabled = false;
-                document.getElementById('successMsg').classList.remove('hidden'); // Hiện thông báo thành công
-                form.reset(); // Xóa trắng form sau khi gửi
+                // FormSubmit trả về dữ liệu thành công
+                if(data.success === "false" || data.success === false) {
+                    alert("Có lỗi từ hệ thống FormSubmit. Vui lòng kiểm tra lại cấu hình hoặc thử lại sau.");
+                    btn.innerHTML = 'ĐẶT HÀNG NGAY';
+                    btn.disabled = false;
+                } else {
+                    btn.innerHTML = 'ĐẶT HÀNG NGAY';
+                    btn.disabled = false;
+                    document.getElementById('successMsg').classList.remove('hidden'); // Hiện thông báo thành công
+                    form.reset(); // Xóa trắng form sau khi gửi
+                }
             })
             .catch(error => {
-                // Xử lý khi gửi thất bại
-                alert("Có lỗi kết nối, vui lòng thử lại sau!");
+                // Xử lý khi có lỗi mạng / bị chặn kết nối
+                alert("Lỗi kết nối! Nếu bạn đang dùng tiện ích chặn quảng cáo (Adblock), vui lòng tắt nó để có thể gửi đơn hàng.");
                 btn.innerHTML = 'ĐẶT HÀNG NGAY';
                 btn.disabled = false;
             });
